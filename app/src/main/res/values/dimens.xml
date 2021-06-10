@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_padding_size_tiny">4dp</dimen>
+    <dimen name="margin_padding_size_small">8dp</dimen>
+    <dimen name="margin_padding_size_medium">16dp</dimen>
+    <dimen name="margin_padding_size_large">24dp</dimen>
+    <dimen name="margin_padding_size_xxxlarge">60dp</dimen>
+
+    <dimen name="loading_progress_bar_size">80dp</dimen>
+
+    <dimen name="list_item_news_small_image_width">75dp</dimen>
+
+    <dimen name="image_size">200dp</dimen>
+    <dimen name="large_layout_size">340dp</dimen>
+    <dimen name="tiny_margin">4dp</dimen>
+    <dimen name="small_margin">5dp</dimen>
+    <dimen name="medium_margin">8dp</dimen>
+    <dimen name="list_separator">5dp</dimen>
+    <dimen name="small_padding">5dp</dimen>
+    <dimen name="large_margin">20dp</dimen>
+    <dimen name="normal_padding">10dp</dimen>
+</resources>
