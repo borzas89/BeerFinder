@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.observe
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.xwray.groupie.GroupieAdapter
@@ -114,8 +115,7 @@ class MarkerListFragment: Fragment(), MarkerItemClickedlambda {
     }
 
     override fun invoke(marker: MarkerPresentationModel, headerCLicked: Boolean) {
-//        navigator?.add(MapFragment.newInstance(marker.id, marker.city, headerCLicked))
-        navigator.navigateToMarker(marker.id)
+        navigator.navigateToMarker(headerCLicked,marker.id,marker.city)
     }
 
     override fun onDestroyView() {

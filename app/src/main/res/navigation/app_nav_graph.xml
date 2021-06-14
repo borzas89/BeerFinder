@@ -28,8 +28,17 @@
         tools:layout="@layout/fragment_map">
 
         <argument
+            android:name="headerClicked"
+            app:argType="boolean" />
+
+        <argument
             android:name="markerId"
             app:argType="long" />
+
+        <argument
+            android:name="markerCity"
+            app:argType="string" />
+
 
     </fragment>
 

@@ -65,17 +65,13 @@ class MapFragment: Fragment() {
         with(viewModel) {
                 viewState.observe(viewLifecycleOwner, ::render)
 
-                if(headerClicked){
-                    loadMarkersByCity(markerCity)
+                if(args.headerClicked){
+                    loadMarkersByCity(args.markerCity)
                 } else{
                     loadMarker(args.markerId)
                 }
 
             }
-
-        binding.menuIcon.onClick {
-            this.activity?.onBackPressed()
-        }
 
     }
 

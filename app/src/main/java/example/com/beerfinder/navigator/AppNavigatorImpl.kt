@@ -15,11 +15,10 @@ class AppNavigatorImpl @Inject constructor(
         Navigation.findNavController(activity, R.id.fragmentNavHost)
     }
 
-
-    override fun navigateToMarker(markerId: Long) {
+    override fun navigateToMarker(headerClicked: Boolean,markerId: Long, markerCity: String) {
         navController.navigate(
             MarkerListFragmentDirections
-                .actionMarkerListFragmentToMapFragment(markerId)
+                .actionMarkerListFragmentToMapFragment(headerClicked, markerId, markerCity)
         )
     }
 
