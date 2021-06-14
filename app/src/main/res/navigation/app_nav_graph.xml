@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_nav_graph"
+    app:startDestination="@id/markerListFragment">
+
+    <fragment
+        android:id="@+id/markerListFragment"
+        android:name="example.com.beerfinder.ui.list.MarkerListFragment"
+        android:label="MarkerListFragment"
+        tools:layout="@layout/fragment_list">
+
+        <action
+            android:id="@+id/action_markerListFragment_to_mapFragment"
+            app:destination="@id/mapFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="example.com.beerfinder.ui.map.MapFragment"
+        android:label="MapFragment"
+        tools:layout="@layout/fragment_map">
+
+        <argument
+            android:name="markerId"
+            app:argType="long" />
+
+    </fragment>
+
+</navigation>
