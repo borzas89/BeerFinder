@@ -6,7 +6,8 @@ Used technologies, libs:
 - Kotlin Coroutines
 - ViewModel, LiveData
 - Databinding
-
+- JetPack Navigation
+- Room
 - Retrofit
 - Moshi
 - Glide
