@@ -10,34 +10,12 @@ import example.com.beerfinder.ui.list.MarkerListFragment
 
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity(), Navigator {
+class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        if (savedInstanceState == null) {
-            add(MarkerListFragment())
-        }
     }
 
-    override fun add(fragment: Fragment) {
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.mainContent, fragment)
-            .addToBackStack(null)
-            .commit()
-    }
-
-    override fun pop() {
-        supportFragmentManager.popBackStack()
-    }
-
-    override fun onBackPressed() {
-        if (supportFragmentManager.backStackEntryCount > 1) {
-            pop()
-        } else {
-            finish()
-        }
-    }
 }

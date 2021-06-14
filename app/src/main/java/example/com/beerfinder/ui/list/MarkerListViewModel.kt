@@ -25,11 +25,6 @@ class MarkerListViewModel
     private val markerDataModelToPresentationModelMapper: MarkerDataModelToPresentationModelMapper
 ) : ViewModel() {
 
-
-    companion object {
-        private const val STATUS_OK = "ok"
-    }
-
     private val _viewState = MutableLiveData<MarkerListViewState>()
     val viewState: LiveData<MarkerListViewState>
         get() = _viewState

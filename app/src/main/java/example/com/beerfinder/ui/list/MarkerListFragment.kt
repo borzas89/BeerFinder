@@ -14,6 +14,8 @@ import example.com.beerfinder.R
 import example.com.beerfinder.databinding.FragmentListBinding
 import example.com.beerfinder.extension.onClick
 import example.com.beerfinder.model.MarkerPresentationModel
+import example.com.beerfinder.navigator.AppNavigator
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MarkerListFragment: Fragment(), MarkerItemClickedlambda {
@@ -25,6 +27,9 @@ class MarkerListFragment: Fragment(), MarkerItemClickedlambda {
 
     lateinit var adapter: GroupieAdapter
     lateinit var recyclerView: RecyclerView
+
+    @Inject
+    lateinit var navigator: AppNavigator
 
     private object Flipper {
         const val LOADING = 0
@@ -99,9 +104,7 @@ class MarkerListFragment: Fragment(), MarkerItemClickedlambda {
                     viewFlipper.displayedChild = Flipper.ERROR
                     errorTextView.text = getString(R.string.network_error_title)
                     errorTextView.onClick {
-                        with(viewModel){
-                            viewModel.loadList()
-                        }
+                        viewModel.loadList()
                     }
 
                 }
@@ -112,6 +115,7 @@ class MarkerListFragment: Fragment(), MarkerItemClickedlambda {
 
     override fun invoke(marker: MarkerPresentationModel, headerCLicked: Boolean) {
 //        navigator?.add(MapFragment.newInstance(marker.id, marker.city, headerCLicked))
+        navigator.navigateToMarker(marker.id)
     }
 
     override fun onDestroyView() {
