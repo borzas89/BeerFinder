@@ -29,6 +29,8 @@ buildscript {
 
         hiltVersion = '2.32-alpha'
 
+        navigationVersion = '2.3.3'
+
         // permission
         permissionsDispatcherVersion = '4.5.0'
         permissionsProcessorVersion = '4.5.0'
@@ -61,6 +63,7 @@ buildscript {
         maven { url "https://jitpack.io" }
     }
     dependencies {
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
         classpath "com.android.tools.build:gradle:$gradleVersion"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
         classpath "com.google.dagger:hilt-android-gradle-plugin:$hiltVersion"
